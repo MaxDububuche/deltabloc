@@ -1,0 +1,32 @@
+liste des pages:
+	-Page de Connexion
+	-Voir Catégories
+	-Voir Articles en fonction de leurs Catégories
+	-Voir Articles unitaire
+	-Ajouter Catégorie
+	-Ajouter Article
+	-Ajouter commentaire
+
+listes des micro-services:
+	-Client(Front)
+	-Eureka
+	-Gateway
+	->Article
+	->Commentaire
+	->Categorie
+	->Auteur
+
+Controller en fonction du ms:
+	Catégorie:
+		-voir les articles
+		-voir les articles d'une catégorie
+		-ajouter une catégorie
+	User:
+		-se connceter
+		-Créer un user
+	Commentaire:
+		-ajouter un comm
+	Article:
+		-ajouter un article
+		-visualiser un article
+
