@@ -8,13 +8,13 @@ liste des pages:
 	-Ajouter commentaire
 
 listes des micro-services:
-	-Client(Front)
-	-Eureka
-	-Gateway
-	->Article
-	->Commentaire
-	->Categorie
-	->Auteur
+	-Client(Front) [8080]
+	-Eureka [9102]
+	-Gateway [9003]
+	->Article [9010 et 9011]
+	->Commentaire [9012 et 9013]
+	->Categorie [9014 et 9015]
+	->Auteur [9016 et 9017]
 
 Controller en fonction du ms:
 	Catégorie:
@@ -29,4 +29,3 @@ Controller en fonction du ms:
 	Article:
 		-ajouter un article
 		-visualiser un article
-
