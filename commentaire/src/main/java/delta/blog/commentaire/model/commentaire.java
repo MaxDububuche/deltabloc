@@ -17,10 +17,10 @@ public class commentaire {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
 	private Long id;
-    @Column(name="id_auteur")
-	private Long id_auteur;
-    @Column(name="id_article")
-    private Long id_article;
+    @Column(name="idauteur")
+	private Long idauteur;
+    @Column(name="idarticle")
+    private Long idarticle;
     @Column(name="texte")
     private String texte;  
     @Column(name="date")
@@ -34,17 +34,17 @@ public class commentaire {
 	}
 	
 	public Long getIdAuteur() {
-		return id_auteur;
+		return idauteur;
 	}
-	public void setIdAuteur(Long id_auteur) {
-		this.id_auteur = id_auteur;
+	public void setIdAuteur(Long idauteur) {
+		this.idauteur = idauteur;
 	}
 	
 	public Long getIdArticle() {
-		return id_article;
+		return idarticle;
 	}
-	public void setIdArticle(Long id_article) {
-		this.id_article = id_article;
+	public void setIdArticle(Long idarticle) {
+		this.idarticle = idarticle;
 	}
 	public Date getDate() {
 		return date;

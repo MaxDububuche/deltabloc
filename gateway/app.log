@@ -1,10 +1,39 @@
-2020-02-25 00:02:47.799  INFO 1804 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-02-25 00:07:48.151  INFO 1804 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-02-25 00:12:48.154  INFO 1804 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-02-25 00:17:48.156  INFO 1804 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-02-25 00:22:48.158  INFO 1804 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-02-25 00:27:48.181  INFO 1804 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-02-25 00:32:48.186  INFO 1804 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-02-25 00:37:48.191  INFO 1804 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-02-25 00:42:48.656  INFO 1804 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2020-02-25 00:47:48.658  INFO 1804 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-02-27 01:52:44.067  INFO 12344 --- [main] delta.blog.gateway.GatewayApplication    : No active profile set, falling back to default profiles: default
+2020-02-27 01:52:46.055  INFO 12344 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-27 01:52:46.056  INFO 12344 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-02-27 01:52:46.209  INFO 12344 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-27 01:52:46.328  WARN 12344 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-02-27 01:52:46.329  INFO 12344 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-02-27 01:52:46.355  INFO 12344 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2418ba04
+2020-02-27 01:52:47.795  WARN 12344 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-02-27 01:52:47.797  INFO 12344 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-02-27 01:52:49.939  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-02-27 01:52:49.989  INFO 12344 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-02-27 01:52:49.991  INFO 12344 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-02-27 01:52:50.102  INFO 12344 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-02-27 01:52:50.103  INFO 12344 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-02-27 01:52:50.274  INFO 12344 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-02-27 01:52:50.644  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-02-27 01:52:50.645  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-02-27 01:52:50.646  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-02-27 01:52:50.647  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-02-27 01:52:50.649  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-02-27 01:52:50.650  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-02-27 01:52:50.652  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-02-27 01:52:50.761  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-02-27 01:52:50.764  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-02-27 01:52:50.767  INFO 12344 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-02-27 01:52:50.773  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1582764770772 with initial instances count: 0
+2020-02-27 01:52:50.777  INFO 12344 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1582764770776, current=UP, previous=STARTING]
+2020-02-27 01:52:50.781  INFO 12344 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-GATEWAY/DESKTOP-V57HNJP:ms-gateway:9003: registering service...
+2020-02-27 01:52:50.867  INFO 12344 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-GATEWAY/DESKTOP-V57HNJP:ms-gateway:9003 - registration status: 204
+2020-02-27 01:52:51.318  INFO 12344 --- [main] delta.blog.gateway.GatewayApplication    : Started GatewayApplication in 8.924 seconds (JVM running for 10.439)
+2020-02-27 01:53:20.770  INFO 12344 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-02-27 01:53:20.779  INFO 12344 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-02-27 01:53:20.780  INFO 12344 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-02-27 01:53:20.781  INFO 12344 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-02-27 01:53:20.782  INFO 12344 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-02-27 01:53:20.783  INFO 12344 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2020-02-27 01:53:20.786  INFO 12344 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-02-27 01:53:20.851  INFO 12344 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-02-27 01:57:50.658  INFO 12344 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
