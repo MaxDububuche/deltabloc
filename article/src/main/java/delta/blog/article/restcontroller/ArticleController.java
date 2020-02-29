@@ -17,43 +17,40 @@ import org.springframework.web.bind.annotation.RestController;
 import delta.blog.article.model.article;
 import delta.blog.article.repositories.ArticleRepository;
 
-
 @RestController
 public class ArticleController {
-
-	@Autowired
-	private ArticleRepository articleRepository;
 	
-	@GetMapping(value = "/articles")
-	public List<article> getArticles() {
+	@Autowired
+	private ArticleRepository aritcleRepository;
+	
+	@GetMapping(path="/articles")
+	public List<article> getArticles(){
 		System.out.println("---------------------- Get articles ----------------------");
 		List<article> articles = new ArrayList<article>(); 
-		articleRepository.findAll().forEach(articles::add);
-		return articles;
+		aritcleRepository.findAll().forEach(articles::add);
+		return articles;		
 	}
-	
-	@PostMapping(value ="/article/add")
+	@PostMapping(value ="/articles/add")
 	public void addUser(@RequestBody article c) {
-		System.out.println("---------------------- Create Article ----------------------");
-		articleRepository.save(c);
+		System.out.println("---------------------- Create article ----------------------");
+		aritcleRepository.save(c);
 	}
 	
-	@DeleteMapping(value = "/article/delete")
-	public void deleteUser(@RequestBody article c) {
-		System.out.println("---------------------- Delete Article ----------------------");
-		articleRepository.delete(c);
+	@DeleteMapping(value = "/article/delete/{id}")
+	public void deleteUser(@PathVariable Long id) {
+		aritcleRepository.deleteById(id);
 	}
-	/*
-	@GetMapping(value = "/articles/{id_categorie}")
-	public List<article> getArticlesByCategorie(@PathVariable Long id_categorie) {
-		System.out.println("---------------------- Get articles by categorie ----------------------");
+	@GetMapping(path="/articles/{idcategorie}")
+	public List<article> getArticlesByidcategorie(@PathVariable Long idcategorie){
+		System.out.println("---------------------- Get articles ----------------------");
 		List<article> articles = new ArrayList<article>(); 
-		articleRepository.findByCategorie(id_categorie).forEach(articles::add);
-		return articles;
-	} 
-	@GetMapping(value = "/articles/{id_categorie}")
-	public Optional<article> getArticlesByCategorie(@PathVariable Long id_categorie) {
-		System.out.println("---------------------- Get articles by categorie ----------------------");
-		return articleRepository.findByCategorie(id_categorie);
-	}*/
+		aritcleRepository.findByidcategorie(idcategorie).forEach(articles::add);
+		return articles;		
+	}
+	@GetMapping(path="/article/{id}")
+	public article getArticleByid(@PathVariable Long id){
+		System.out.println("---------------------- Get articles ----------------------");
+		article a = aritcleRepository.findByid(id);
+		return a;		
+	}
 }

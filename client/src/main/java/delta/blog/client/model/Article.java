@@ -1,27 +1,13 @@
-package delta.blog.article.model;
+package delta.blog.client.model;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
-public class article {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+public class Article {
 	private Long id;
-	@Column(name="contenu")
 	private String contenu;
-	@Column(name="idcategorie")
 	private Long idcategorie;
-	@Column(name="idauteur")
 	private Long idauteur;
-	@Column(name="Date")
 	private Date date;
 
 	public Long getId() {
@@ -59,6 +45,5 @@ public class article {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
 	
 }

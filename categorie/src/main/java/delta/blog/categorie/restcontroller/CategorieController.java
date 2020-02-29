@@ -38,9 +38,26 @@ public class CategorieController {
 		categorieRepository.save(c);
 	}
 	
-	@DeleteMapping(value = "/categorie/delete")
-	public void deleteUser(@RequestBody categorie c) {
-		categorieRepository.delete(c);
+	@DeleteMapping(value = "/categorie/delete{id}")
+	public void deleteUser(@PathVariable Long id) {
+		categorieRepository.deleteById(id);
 	}
 	
+//	@GetMapping(value = "/articles/{id}")
+//	public List<categorie> getArticlesByCategorie(@PathVariable Long id) {
+//		System.out.println("---------------------- Get articles by categorie ----------------------");
+//		List<categorie> res = new ArrayList<categorie>(); ;
+//		Iterable<categorie> users= categorieRepository.findAll();
+//		Iterator<categorie> ite = users.iterator();
+//		while(ite.hasNext()) {
+//			categorie u = ite.next();
+//			
+//			Long idcategorie = u.getId();
+//			if(id==idcategorie) {
+//				res.add(u);
+//			}
+//			
+//		}
+//		return res;
+//	}
 }

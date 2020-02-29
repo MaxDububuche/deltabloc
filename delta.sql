@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 24 fév. 2020 à 23:49
+-- Généré le :  jeu. 27 fév. 2020 à 00:59
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -31,14 +31,22 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `article`;
 CREATE TABLE IF NOT EXISTS `article` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_categorie` int(11) NOT NULL,
-  `id_auteur` int(11) NOT NULL,
+  `idcategorie` int(11) NOT NULL,
+  `idauteur` int(11) NOT NULL,
   `date` date NOT NULL,
   `contenu` text NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_categorie` (`id_categorie`) USING BTREE,
-  KEY `id_auteur` (`id_auteur`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `idcategorie` (`idcategorie`) USING BTREE,
+  KEY `idauteur` (`idauteur`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `article`
+--
+
+INSERT INTO `article` (`id`, `idcategorie`, `idauteur`, `date`, `contenu`) VALUES
+(1, 2, 1, '2020-02-11', 'Loreum '),
+(2, 2, 1, '2020-02-11', 'Loreum ');
 
 -- --------------------------------------------------------
 
@@ -54,7 +62,14 @@ CREATE TABLE IF NOT EXISTS `auteur` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   UNIQUE KEY `mail` (`mail`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `auteur`
+--
+
+INSERT INTO `auteur` (`username`, `password`, `mail`, `id`) VALUES
+('adrien', 'adrien', 'adrien.leib@ynov.com', 1);
 
 -- --------------------------------------------------------
 
@@ -87,14 +102,21 @@ INSERT INTO `categorie` (`id`, `name`) VALUES
 DROP TABLE IF EXISTS `commentaire`;
 CREATE TABLE IF NOT EXISTS `commentaire` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_auteur` int(11) NOT NULL,
-  `id_article` int(11) NOT NULL,
+  `idauteur` int(11) NOT NULL,
+  `idarticle` int(11) NOT NULL,
   `texte` text NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_auteur` (`id_auteur`),
-  UNIQUE KEY `id_article` (`id_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  UNIQUE KEY `idarticle` (`idarticle`) USING BTREE,
+  UNIQUE KEY `idauteur` (`idauteur`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `commentaire`
+--
+
+INSERT INTO `commentaire` (`id`, `idauteur`, `idarticle`, `texte`, `date`) VALUES
+(1, 1, 1, 'LOREUM', '2020-02-18');
 
 --
 -- Contraintes pour les tables déchargées
@@ -104,15 +126,15 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
 -- Contraintes pour la table `article`
 --
 ALTER TABLE `article`
-  ADD CONSTRAINT `article_ibfk_1` FOREIGN KEY (`id_categorie`) REFERENCES `categorie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `article_ibfk_2` FOREIGN KEY (`id_auteur`) REFERENCES `auteur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `article_ibfk_1` FOREIGN KEY (`idcategorie`) REFERENCES `categorie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `article_ibfk_2` FOREIGN KEY (`idauteur`) REFERENCES `auteur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `commentaire`
 --
 ALTER TABLE `commentaire`
-  ADD CONSTRAINT `commentaire_ibfk_1` FOREIGN KEY (`id_auteur`) REFERENCES `auteur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `commentaire_ibfk_2` FOREIGN KEY (`id_article`) REFERENCES `article` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `commentaire_ibfk_1` FOREIGN KEY (`idauteur`) REFERENCES `auteur` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `commentaire_ibfk_2` FOREIGN KEY (`idarticle`) REFERENCES `article` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

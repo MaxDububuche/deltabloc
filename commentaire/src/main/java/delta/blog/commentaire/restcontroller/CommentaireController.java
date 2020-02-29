@@ -37,17 +37,17 @@ public class CommentaireController {
 		commentaireRepository.save(c);
 	}
 	
-	@DeleteMapping(value = "/commentaire/delete")
-	public void deleteUser(@RequestBody commentaire c) {
+	@DeleteMapping(value = "/commentaire/delete/{id}")
+	public void deleteUser(@PathVariable Long id) {
 		System.out.println("---------------------- Delete commentaire ----------------------");
-		commentaireRepository.delete(c);
+		commentaireRepository.deleteById(id);
 	}
 	
-	@GetMapping(value="/commentaire/{id_article]")
-	public List<commentaire> findByArticle(@PathVariable Long id_article) {
+	@GetMapping(value="/commentaires/{idArticle}")
+	public List<commentaire> findByArticle(@PathVariable Long idarticle) {
 		System.out.println("---------------------- Get Commentaire by article ----------------------");
 		List<commentaire> commentaires = new ArrayList<commentaire>(); 
-		commentaireRepository.findAll().forEach(commentaires::add);
+		commentaireRepository.findByidarticle(idarticle).forEach(commentaires::add);
 		return commentaires;
 	}
 }
