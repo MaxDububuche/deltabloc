@@ -93,6 +93,26 @@ public class HomeController {
 
         return "Articles";
     }
+
+    
+    @RequestMapping(value ="/categories/add", method = RequestMethod.GET)
+    public String formulaireCategorie(Model model) {
+    	categorie form = new categorie();
+    	model.addAttribute("categorie", form);
+    	
+    	return "FormCategorie";
+    }
+    
+    @RequestMapping(value="/categories/add", method = RequestMethod.POST)
+    public String addCategorie(@ModelAttribute("categorie") @Validated categorie c, Model model) {
+    	System.out.println(c);
+    	MScategorieProxy.addUser(c);
+        List<categorie> articles1 =  MScategorieProxy.getCategories();
+
+        model.addAttribute("categories", articles1);
+
+        return "Categories";
+    }
     
     @RequestMapping("/categories")
     public String getCategories(Model model){
@@ -103,12 +123,32 @@ public class HomeController {
         return "Categories";
     }
     
-    @RequestMapping("/categories/{idcategorie}")
+    @RequestMapping("/categorie/{idcategorie}")
     public String getArticlesByidcategorie(@PathVariable Long idcategorie, Model model){
         List<article> articles =  MSarticleProxy.getArticlesByidcategorie(idcategorie);
         model.addAttribute("articles", articles);
         return "Articles";
     }
+   
+    @RequestMapping(value ="/commentaires/add", method = RequestMethod.GET)
+    public String formulaireCommentaire(Model model) {
+    	commentaire form = new commentaire();
+    	model.addAttribute("commentaire", form);
+    	
+    	return "FormCommentaire";
+    }
     
+    @RequestMapping(value="/commentaires/add", method = RequestMethod.POST)
+    public String addCommentaire(@ModelAttribute("commentaire") @Validated commentaire c, Model model) {
+    	System.out.println(c);
+    	userProxy5.addUser(c);
+        article article =  MSarticleProxy.getArticleByid(c.getIdArticle());
+        List<commentaire> commentaires = userProxy5.findByArticle(c.getIdArticle());
+        
+        model.addAttribute("articles", article);
+        model.addAttribute("commentaires", article);
+
+        return "Article";
+    }   
     
 }

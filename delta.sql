@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 27 fév. 2020 à 00:59
+-- Généré le :  Dim 01 mars 2020 à 21:52
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -33,20 +33,21 @@ CREATE TABLE IF NOT EXISTS `article` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `idcategorie` int(11) NOT NULL,
   `idauteur` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `date` text NOT NULL,
   `contenu` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idcategorie` (`idcategorie`) USING BTREE,
   KEY `idauteur` (`idauteur`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `article`
 --
 
 INSERT INTO `article` (`id`, `idcategorie`, `idauteur`, `date`, `contenu`) VALUES
-(1, 2, 1, '2020-02-11', 'Loreum '),
-(2, 2, 1, '2020-02-11', 'Loreum ');
+(1, 2, 1, '2020-02-11 00:00:00', 'Loreum '),
+(2, 2, 1, '2020-02-11 00:00:00', 'Loreum '),
+(4, 1, 1, '11-01-2020', 'Loreum');
 
 -- --------------------------------------------------------
 
@@ -82,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `categorie`
@@ -91,7 +92,8 @@ CREATE TABLE IF NOT EXISTS `categorie` (
 INSERT INTO `categorie` (`id`, `name`) VALUES
 (1, 'Adrien'),
 (2, 'Sport'),
-(3, 'Musique');
+(3, 'Musique'),
+(4, 'Leib');
 
 -- --------------------------------------------------------
 
@@ -105,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
   `idauteur` int(11) NOT NULL,
   `idarticle` int(11) NOT NULL,
   `texte` text NOT NULL,
-  `date` date NOT NULL,
+  `date` text NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idarticle` (`idarticle`) USING BTREE,
   UNIQUE KEY `idauteur` (`idauteur`) USING BTREE

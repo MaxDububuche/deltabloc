@@ -8,7 +8,7 @@ public class article {
 	private String contenu;
 	private Long idcategorie;
 	private Long idauteur;
-	private Date date;
+	private String date;
 
 	public Long getId() {
 		return id;
@@ -39,10 +39,10 @@ public class article {
 		this.idauteur = idauteur;
 	}
 	
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	

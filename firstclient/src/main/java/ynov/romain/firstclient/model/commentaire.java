@@ -9,7 +9,7 @@ public class commentaire {
 	private Long idauteur;
     private Long idarticle;
     private String texte;  
-    private Date date;
+    private String date;
     
 	public Long getId() {
 		return id;
@@ -31,10 +31,19 @@ public class commentaire {
 	public void setIdArticle(Long idarticle) {
 		this.idarticle = idarticle;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
+	
+	public String getTexte() {
+		return texte;
+	}
+	public void setTexte(String texte) {
+		this.texte = texte;
+	}
 }
+
+

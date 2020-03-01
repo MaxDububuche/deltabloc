@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<head>
+
+</head>
+
+<h1>Categorie Formulaire </h1>
+
+
+<form  th:action="@{/categories/add}" th:object="${categorie}" method="post">
+    <p>
+        name: <input type="text" th:field="*{name}">
+        </p>
+    <p>
+        <input type="submit" value="Submit"/>
+    </p>
+</form>
+
+</body>
+</html>

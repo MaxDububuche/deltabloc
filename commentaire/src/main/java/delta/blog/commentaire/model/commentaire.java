@@ -24,7 +24,7 @@ public class commentaire {
     @Column(name="texte")
     private String texte;  
     @Column(name="date")
-    private Date date;
+    private String date;
     
 	public Long getId() {
 		return id;
@@ -46,10 +46,10 @@ public class commentaire {
 	public void setIdArticle(Long idarticle) {
 		this.idarticle = idarticle;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

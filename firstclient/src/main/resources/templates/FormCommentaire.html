@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulaire Commentaires</title>
+</head>
+<body>
+
+<h1>Commentaire Formulaire </h1>
+<form  th:action="@{/commentaires/add}" th:object="${commentaire}" method="post">
+    <p>
+        idAuteur: <input type="number" th:field="*{idAuteur}">
+    </p>
+    <p>
+        idArticle: <input type="number" th:field="*{idArticle}">
+    </p>
+    <p>
+        texte: <input type="text" th:field="*{texte}">
+    </p>
+    <p>
+        date: <input type="date" th:field="*{date}">
+    </p>
+    <p>
+        <input type="submit" value="Submit"/>
+    </p>
+</form>
+</body>
+</html>
