@@ -42,6 +42,14 @@ public class HomeController {
     @Autowired
     private MSCommentaireProxy userProxy5;
     
+    @RequestMapping("/")
+    public String getCategoriesH(Model model){
+        List<categorie> categories =  MScategorieProxy.getCategories();
+
+        model.addAttribute("categories", categories);
+
+        return "Categories";
+    }
 	
     @RequestMapping("/auteurs")
     public String getAuteurs(Model model){
@@ -149,6 +157,26 @@ public class HomeController {
         model.addAttribute("commentaires", article);
 
         return "Article";
-    }   
+    }
+    
+    @RequestMapping(value ="/auteurs/add", method = RequestMethod.GET)
+    public String formulaireAuteurs(Model model) {
+    	auteur form = new auteur();
+    	model.addAttribute("auteur", form);
+    	
+    	return "FormAuteur";
+    }
+    
+    @RequestMapping(value="/auteurs/add", method = RequestMethod.POST)
+    public String addAuteurs(@ModelAttribute("auteur") @Validated auteur u, Model model) {
+    	System.out.println(u);
+    	MSauteurProxy.addUser(u);
+        List<auteur> auteurs = MSauteurProxy.getUsers();
+        
+        
+        model.addAttribute("users", auteurs);
+
+        return "Home";
+    }  
     
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulaire Auteur</title>
+</head>
+<body>
+
+
+<head>
+
+</head>
+
+<h1>Categorie Formulaire </h1>
+
+
+<form  th:action="@{/auteurs/add}" th:object="${auteur}" method="post">
+    <p>
+        username: <input type="text" th:field="*{username}">
+    </p>
+    <p>
+        password: <input type="password" th:field="*{password}">
+    </p>
+    <p>
+        <input type="submit" value="Submit"/>
+    </p>
+</form>
+
+</body>
+</html>
