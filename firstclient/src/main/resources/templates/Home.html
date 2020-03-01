@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+
+<!--     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" /> -->
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Liste des auteurs</h1>
+
+    <div>
+        <div th:each="user : ${users}">
+<!--             <a th:href="@{|/user/${user.id}|}" > -->
+                <p th:text= "${user.username}"></p>
+<!--             </a> -->
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- <script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script> -->
+
+</body>
+</html>

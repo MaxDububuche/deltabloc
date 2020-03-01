@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<head>
+    <title>Article</title>
+
+<!--     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" /> -->
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Liste des articles</h1>
+
+    <div>
+        <div th:each="article : ${users}">
+<!--             <a th:href="@{|/user/${user.id}|}" > -->
+ 				<p th:text= "${article.idAuteur}"></p>
+				<p th:text= "${article.idCategorie}"></p>
+                <p th:text= "${article.contenu}"></p>
+                <p th:text= "${article.date}"></p>
+                
+<!--             </a> -->
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- <script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script> -->
+
+</body>
+</html>
