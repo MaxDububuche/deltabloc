@@ -5,8 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import ynov.romain.firstclient.model.User;
 import ynov.romain.firstclient.proxies.MSUserProxy;
@@ -69,6 +73,26 @@ public class HomeController {
 
         return "Article";
     }   
+    
+    
+    @RequestMapping(value ="/articles/add", method = RequestMethod.GET)
+    public String formulaireArticle(Model model) {
+    	article form = new article();
+    	model.addAttribute("article", form);
+    	
+    	return "FormArticle";
+    }
+    
+    @RequestMapping(value="/articles/add", method = RequestMethod.POST)
+    public String addArticle(@ModelAttribute("article") @Validated article c, Model model) {
+    	System.out.println(c);
+    	List<article> articles = MSarticleProxy.addUser(c);
+        List<article> articles1 =  MSarticleProxy.getArticles();
+
+        model.addAttribute("articles", articles1);
+
+        return "Articles";
+    }
     
     @RequestMapping("/categories")
     public String getCategories(Model model){

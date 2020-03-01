@@ -30,5 +30,5 @@ public interface MSArticleProxy {
 	List<article> getArticlesByidcategorie(@PathVariable Long idcategorie);
 	
 	@PostMapping(path="/articles/add")
-	void addUser(@RequestBody article c);
+	List<article> addUser(@RequestBody article c);
 }

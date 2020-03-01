@@ -6,5 +6,34 @@
 </head>
 <body>
 
+I have an HTML file that has a form:
+
+<head>
+
+</head>
+
+<h1>Article Formulaire </h1>
+
+<p>Please fill out all information below to register as a voter.</p>
+
+
+<form  th:action="@{/articles/add}" th:object="${article}" method="post">
+    <p>
+        idAuteur: <input type="number" th:field="*{idAuteur}">
+    </p>
+    <p>
+        idCategorie: <input type="number" th:field="*{idCategorie}">
+    </p>
+    <p>
+        contenu: <input type="text" th:field="*{contenu}">
+    </p>
+    <p>
+        date: <input type="text" th:field="*{date}">
+    </p>
+    <p>
+        <input type="submit" value="Submit"/>
+    </p>
+</form>
+
 </body>
 </html>
