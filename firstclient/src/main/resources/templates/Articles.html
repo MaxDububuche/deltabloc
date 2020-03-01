@@ -2,13 +2,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<head>
+    <title>Article</title>
+
+<!--     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" /> -->
+
 </head>
 <body>
 
 <div class="container">
 
-    <h1>Article </h1>
+    <h1>Liste des articles</h1>
 
     <div>
         <div th:each="article : ${articles}">
@@ -26,23 +30,7 @@
 </div>
 
 
-
-<div class="container">
-
-    <h1>Commentaire</h1>
-
-    <div>
-        <div th:each="commentaire : ${commentaires}">
- 				<p th:text= "${commentaire.idAuteur}"></p>
-				<!-- <p th:text= "${commentaire.texte}"></p> -->
-                <p th:text= "${commentaire.date}"></p>
-                
-<!--             </a> -->
-        </div>
-    </div>
-
-
-</div>
+<!-- <script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script> -->
 
 </body>
 </html>

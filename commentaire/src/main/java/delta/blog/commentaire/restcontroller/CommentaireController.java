@@ -44,10 +44,10 @@ public class CommentaireController {
 	}
 	
 	@GetMapping(value="/commentaires/{idArticle}")
-	public List<commentaire> findByArticle(@PathVariable Long idarticle) {
+	public List<commentaire> findByArticle(@PathVariable Long idArticle) {
 		System.out.println("---------------------- Get Commentaire by article ----------------------");
 		List<commentaire> commentaires = new ArrayList<commentaire>(); 
-		commentaireRepository.findByidarticle(idarticle).forEach(commentaires::add);
+		commentaireRepository.findByidarticle(idArticle).forEach(commentaires::add);
 		return commentaires;
 	}
 }

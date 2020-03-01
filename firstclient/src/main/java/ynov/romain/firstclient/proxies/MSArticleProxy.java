@@ -2,6 +2,7 @@ package ynov.romain.firstclient.proxies;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
@@ -21,4 +22,10 @@ public interface MSArticleProxy {
 	
 	@GetMapping(value="/articles")
 	List<article> getArticles();
+	
+	@GetMapping(path="/article/{id}")
+	article getArticleByid(@PathVariable Long id);
+	
+	@GetMapping(path="/articles/{idcategorie}")
+	List<article> getArticlesByidcategorie(@PathVariable Long idcategorie);
 }

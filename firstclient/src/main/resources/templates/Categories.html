@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Liste des categories</h1>
+
+    <div>
+        <div th:each="categorie : ${categories}">
+<!--             <a th:href="@{|/user/${user.id}|}" > -->
+ 				<p th:text= "${categorie.id}"></p>
+				<p th:text= "${categorie.name}"></p>
+                
+<!--             </a> -->
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- <script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script> -->
+
+</body>
+</html>

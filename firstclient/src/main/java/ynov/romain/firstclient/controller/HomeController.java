@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ynov.romain.firstclient.model.User;
@@ -16,34 +17,33 @@ import ynov.romain.firstclient.proxies.MSAuteurProxy;
 import ynov.romain.firstclient.model.article;
 import ynov.romain.firstclient.proxies.MSArticleProxy;
 
+import ynov.romain.firstclient.model.categorie;
+import ynov.romain.firstclient.proxies.MSCategorieProxy;
+
+import ynov.romain.firstclient.model.commentaire;
+import ynov.romain.firstclient.proxies.MSCommentaireProxy;
+
 @Controller
 public class HomeController {
 
     @Autowired
-    private MSUserProxy userProxy;
-    @Autowired
-    private MSAuteurProxy userProxy2;
+    private MSAuteurProxy MSauteurProxy;
 
     @Autowired
-    private MSArticleProxy userProxy3;
+    private MSArticleProxy MSarticleProxy;
     
-    @RequestMapping("/toto")
-    public String home(Model model){
-
-        List<User> users =  userProxy.getUsers();
-
-        model.addAttribute("users", users);
-
-        return "Home";
-        
-    }
+    @Autowired
+    private MSCategorieProxy MScategorieProxy;
+    
+    @Autowired
+    private MSCommentaireProxy userProxy5;
+    
 	
-    @RequestMapping("/auteur")
+    @RequestMapping("/auteurs")
     public String getAuteurs(Model model){
-    	System.out.println("!!!!!!!!!!!!! JE SUIS LA !!!!!!!!!!!!!!!!!");
-        List<auteur> users =  userProxy2.getUsers();
+        List<auteur> auteurs =  MSauteurProxy.getUsers();
 
-        model.addAttribute("users", users);
+        model.addAttribute("users", auteurs);
 
         return "Home";
     }
@@ -51,11 +51,40 @@ public class HomeController {
 	
     @RequestMapping("/articles")
     public String getArticles(Model model){
-    	System.out.println("!!!!!!!!!!!!! JE SUIS LA !!!!!!!!!!!!!!!!!");
-        List<article> users =  userProxy3.getArticles();
+        List<article> articles =  MSarticleProxy.getArticles();
 
-        model.addAttribute("users", users);
+        model.addAttribute("articles", articles);
+
+        return "Articles";
+    }    
+    
+    
+    @RequestMapping("/article/{idArticle}")
+    public String getArticleByid(@PathVariable Long idArticle, Model model){
+        article article =  MSarticleProxy.getArticleByid(idArticle);
+        List<commentaire> commentaires = userProxy5.findByArticle(idArticle);
+        
+        model.addAttribute("articles", article);
+        model.addAttribute("commentaires", article);
 
         return "Article";
-    }    
+    }   
+    
+    @RequestMapping("/categories")
+    public String getCategories(Model model){
+        List<categorie> categories =  MScategorieProxy.getCategories();
+
+        model.addAttribute("categories", categories);
+
+        return "Categories";
+    }
+    
+    @RequestMapping("/categories/{idcategorie}")
+    public String getArticlesByidcategorie(@PathVariable Long idcategorie, Model model){
+        List<article> articles =  MSarticleProxy.getArticlesByidcategorie(idcategorie);
+        
+        model.addAttribute("articles", articles);
+
+        return "Articles";
+    }       
 }

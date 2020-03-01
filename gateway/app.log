@@ -1,0 +1,51 @@
+2020-03-01 12:21:08.286  INFO 11636 --- [main] delta.blog.gateway.GatewayApplication    : No active profile set, falling back to default profiles: default
+2020-03-01 12:21:10.092  INFO 11636 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-01 12:21:10.093  INFO 11636 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-03-01 12:21:10.265  INFO 11636 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-01 12:21:10.357  WARN 11636 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-03-01 12:21:10.358  INFO 11636 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-01 12:21:10.374  INFO 11636 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6438a7fe
+2020-03-01 12:21:11.627  WARN 11636 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-03-01 12:21:11.628  INFO 11636 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-03-01 12:21:13.429  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-03-01 12:21:13.493  INFO 11636 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-03-01 12:21:13.494  INFO 11636 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-03-01 12:21:13.624  INFO 11636 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-03-01 12:21:13.625  INFO 11636 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-03-01 12:21:13.807  INFO 11636 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-03-01 12:21:14.132  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-03-01 12:21:14.133  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-03-01 12:21:14.135  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-03-01 12:21:14.135  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-03-01 12:21:14.137  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-03-01 12:21:14.137  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-03-01 12:21:14.138  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-03-01 12:21:14.407  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-03-01 12:21:14.410  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-03-01 12:21:14.415  INFO 11636 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-03-01 12:21:14.422  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1583061674421 with initial instances count: 0
+2020-03-01 12:21:14.425  INFO 11636 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1583061674425, current=UP, previous=STARTING]
+2020-03-01 12:21:14.429  INFO 11636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-GATEWAY/DESKTOP-V57HNJP:ms-gateway: registering service...
+2020-03-01 12:21:14.646  INFO 11636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-GATEWAY/DESKTOP-V57HNJP:ms-gateway - registration status: 204
+2020-03-01 12:21:14.934  INFO 11636 --- [main] delta.blog.gateway.GatewayApplication    : Started GatewayApplication in 8.218 seconds (JVM running for 9.755)
+2020-03-01 12:21:44.411  INFO 11636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-03-01 12:21:44.413  INFO 11636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-03-01 12:21:44.418  INFO 11636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-03-01 12:21:44.420  INFO 11636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-03-01 12:21:44.421  INFO 11636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-03-01 12:21:44.423  INFO 11636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2020-03-01 12:21:44.428  INFO 11636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-03-01 12:21:44.488  INFO 11636 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-03-01 12:26:14.143  INFO 11636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-03-01 12:31:14.145  INFO 11636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-03-01 12:36:14.147  INFO 11636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-03-01 12:41:14.151  INFO 11636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-03-01 12:46:14.153  INFO 11636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-03-01 12:51:14.155  INFO 11636 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-03-01 12:54:44.921  WARN 11636 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1583063684921, current=DOWN, previous=UP]
+2020-03-01 12:54:44.926  INFO 11636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-GATEWAY/DESKTOP-V57HNJP:ms-gateway: registering service...
+2020-03-01 12:54:45.359  INFO 11636 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-GATEWAY/DESKTOP-V57HNJP:ms-gateway - registration status: 204
+2020-03-01 12:54:46.468  INFO 11636 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-03-01 12:54:49.478  INFO 11636 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-03-01 12:54:49.506  INFO 11636 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_MS-GATEWAY/DESKTOP-V57HNJP:ms-gateway - deregister  status: 200
+2020-03-01 12:54:49.772  INFO 11636 --- [SpringContextShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
