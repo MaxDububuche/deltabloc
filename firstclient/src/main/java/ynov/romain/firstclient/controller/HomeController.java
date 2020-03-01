@@ -82,9 +82,9 @@ public class HomeController {
     @RequestMapping("/categories/{idcategorie}")
     public String getArticlesByidcategorie(@PathVariable Long idcategorie, Model model){
         List<article> articles =  MSarticleProxy.getArticlesByidcategorie(idcategorie);
-        
         model.addAttribute("articles", articles);
-
         return "Articles";
-    }       
+    }
+    
+    
 }

@@ -28,4 +28,7 @@ public interface MSArticleProxy {
 	
 	@GetMapping(path="/articles/{idcategorie}")
 	List<article> getArticlesByidcategorie(@PathVariable Long idcategorie);
+	
+	@PostMapping(path="/articles/add")
+	void addUser(@RequestBody article c);
 }
